@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     
@@ -18,12 +17,13 @@ pipeline {
             }
         }
 
-        /*stage ('Build') {
+        stage('Build') {
             steps {
                 script { 
+                    // Puedes agregar aquí los pasos de construcción, como 'npm install'
                     sh 'npm install'
                 }
             }
-        }*/
+        }
     }
 }
