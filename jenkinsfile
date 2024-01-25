@@ -12,7 +12,7 @@ pipeline {
                 script {
                     // Clonar el repositorio desde GitHub
                     git url: 'https://github.com/edansanmar/JavaScript-Capstone.git'
-                    echo 'pasado'
+                    echo 'Pasó la etapa de Checkout'
                 }
             }
         }
@@ -22,6 +22,7 @@ pipeline {
                 script { 
                     // Puedes agregar aquí los pasos de construcción, como 'npm install'
                     sh 'npm install'
+                    echo 'Pasó la etapa de Build'
                 }
             }
         }
