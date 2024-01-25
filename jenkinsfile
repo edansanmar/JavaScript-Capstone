@@ -1,5 +1,3 @@
-// @Library es una directiva en Jenkins para cargar la librería compartida
-@Library('devops@master') _
 
 pipeline {
     agent any
