@@ -1,22 +1,28 @@
-//@Library, es una directiva en Jenkins, para poder cargar la librería compartida
-@Library('devops@master') _ //Prueba de funcionamiento de independencia de la rama master y feature #1
+// @Library es una directiva en Jenkins para cargar la librería compartida
+@Library('devops@master') _
+
 pipeline {
     agent any
-    tools{
+    
+    tools {
+        // Definir la herramienta Node.js con el nombre 'nodejs'
         nodejs 'nodejs'
     }
-    stages{
-        stage('Checkout'){
-            steps{
-                script{
-                     git url: 'https://github.com/edansanmar/JavaScript-Capstone.git'
+
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    // Clonar el repositorio desde GitHub
+                    git url: 'https://github.com/edansanmar/JavaScript-Capstone.git'
+                    echo 'pasado'
                 }
             }
-
         }
+
         /*stage ('Build') {
             steps {
-                script{ 
+                script { 
                     sh 'npm install'
                 }
             }
