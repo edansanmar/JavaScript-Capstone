@@ -1,6 +1,5 @@
 //@Library, es una directiva en Jenkins, para poder cargar la librería compartida
-//@Library('devops@master') _ //Prueba de funcionamiento de independencia de la rama master y feature #1
-
+@Library('devops@master') _ //Prueba de funcionamiento de independencia de la rama master y feature #1
 pipeline {
     agent any
     tools{
