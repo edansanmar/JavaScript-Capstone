@@ -17,12 +17,29 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Install Dependecias') {
             steps {
                 script { 
-                    // Puedes agregar aquí los pasos de construcción, como 'npm install'
+                    // Proceso para instalar las dependencias 'npm install'
                     sh 'npm install'
                     echo 'Pasó la etapa de Build'
+                }
+            }
+        }
+        stage('Build'){
+            steps {
+                script {
+                    //Construtir la aplicación React
+                    sh 'npm run build'
+                }
+            }
+        }
+        stage('Test'){
+            steps{
+                script {
+                    //Ejecutar pruebas 
+                    sh 'npm test'
+                    echo 'Finalización del Pipeline, hasta el momento.'
                 }
             }
         }
